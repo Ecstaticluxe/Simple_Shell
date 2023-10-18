@@ -55,7 +55,6 @@ int main(void)
 	if (pid == 0)
 	{
 	char *envp[] = {NULL};
-
 	if (execve(args[0], args, envp) == -1)
 	{
 	perror("execve");
@@ -69,10 +68,8 @@ int main(void)
 		}
 		else
 	{
-
 	continue;
 	}
-
 	free(input);
 	input = NULL;
 	}

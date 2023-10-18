@@ -24,12 +24,14 @@ int main(void)
 	{
 		printf("$ ");
 		ssize_t c = getline(&input, &size, stdin);
-		if (c == -1) {
-			perror("getline");
-			return 1;
 
- free(input);
-		return 0;
+		if (c == -1)
+		{
+			perror("getline");
+			return (1);
+
+free(input);
+		return (0);
 	}
 		if (c == -1)
 		{
@@ -54,7 +56,7 @@ if (pid == -1)
 }
 if (pid == 0)
 {
-	if (execve("usr/bin/ls", argv, NULL) == -1)
+if (execve("usr/bin/ls", argv, NULL) == -1)
 
 /**
 * _strlen - length of string
@@ -62,16 +64,17 @@ if (pid == 0)
 * Return: size
 */
 
-int _strlen(char *s) {
+int _strlen(char *s)
+{
 
 	int size = 0;
 
-	if (int i = 0;
-	s[i]!='\0'; i++)
+	(int i = 0;
+	s[i] != '\0'; i++)
 {
 	size++;
 }
-	return size;
+	return (size);
 }
 
 	{
@@ -88,6 +91,6 @@ int _strlen(char *s) {
 	}
 	free(input);
 	input = NULL;
-}
-return 0;
+
+return (0);
 }

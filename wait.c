@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 #define MAX_ARGS 64
 
 /**
@@ -13,22 +14,23 @@
 
 int main(void)
 {
-	char *input = NULL;
+char *input = NULL;
 	size_t size = 0;
 
-	while (1)
-	{
-	printf("$ ");
-	ssize_t c = getline(&input, &size, stdin);
-
-	if (c == -1)
-	{
-	break;
+    while (1)
+    {
+        printf("$ ");
+        ssize_t c = getline(&input, &size, stdin);
+        if (c == -1)
+        {
+break;
 	}
 
-	if (input[c - 1] == '\n')
-	{
-	input[c - 1] = '\0';
+        if (input[c - 1] == '\n')
+        {
+            input[c - 1] = '\0';
+        }
+
 	}
 
 	char *token;
@@ -37,6 +39,13 @@ int main(void)
 
 	token = strtok(input, " ");
 	while (token != NULL)
+
+	printf("Token: %s\n", token);
+	token = strtok(NULL, " ");
+	}
+	free (input);
+	return 0;
+
 	{
 	args[arg_count++] = token;
 	token = strtok(NULL, " ");

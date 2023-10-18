@@ -15,15 +15,22 @@ int main(void);
 
 int main(void)
 {
-
-	char *input NULL;
+	ssize_t c;
+	char *input = NULL;
 	size_t size = 0;
 
 	while (1)
 
 	{
 		printf("$ ");
-		ssize_t c + getline(&input, &size, stdin); "ls"
+		ssize_t c = getline(&input, &size, stdin);
+		if (c == -1) {
+			perror("getline");
+			return 1;
+
+ free(input);
+		return 0;
+	}
 		if (c == -1)
 		{
 
@@ -36,9 +43,9 @@ input[c - 1] = '\n';
 
 	if (strcmp(input, "ls") == 0)
 	{
-		char *argv[] = {'ls", "-l", NULL};
+	char *argv[] = {"ls", "-l", NULL}
 
-		pid_t pid = fork();
+	pid_t pid = fork();
 
 if (pid == -1)
 {
@@ -55,9 +62,9 @@ if (pid == 0)
 * Return: size
 */
 
-int _strlen(char *s)
-{
-	int size=0;
+int _strlen(char *s) {
+
+	int size = 0;
 
 	if (int i = 0;
 	s[i]!='\0'; i++)
@@ -84,5 +91,3 @@ int _strlen(char *s)
 }
 return 0;
 }
-
-

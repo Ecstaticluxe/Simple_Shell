@@ -1,4 +1,11 @@
 #include "shell.h"
+#include <sys/types.h>
+#include <fcntl.h>
+#include <sys/wait.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <errno.h>
+#include <stdio.h>
 
 /**
  * is_chain - test if current char in buffer is a chain delimeter
@@ -9,8 +16,10 @@
  * Return: 1 if chain delimeter, 0 otherwise
  */
 int is_chain(info_t *info, char *buf, size_t *p)
+
 {
 	size_t j = *p;
+	info_t;
 
 	if (buf[j] == '|' && buf[j + 1] == '|')
 	{

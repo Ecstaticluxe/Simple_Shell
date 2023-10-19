@@ -1,4 +1,6 @@
 #include "shell.h"
+#include <stddef.h>
+#include <sys/types.h>
 
 /**
  * interactive - returns true if shell is interactive mode
